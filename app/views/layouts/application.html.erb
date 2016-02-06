@@ -8,6 +8,13 @@
 </head>
 <body>
 
+
+<% if user_signed_in? %>
+  <p>Olá <%= current_user.email %>.</p>
+
+  <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+<% end %>
+
 <% flash.each do |key, value| %>
   <p class="alert alert-info"><%= value %></p>
 <% end %>
