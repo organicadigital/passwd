@@ -1,0 +1,11 @@
+@import "core/variables";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "components/devise_controller";
+@import "components/form";
+@import "components/panel";
+
+body {
+  background-color: $background-color;
+}

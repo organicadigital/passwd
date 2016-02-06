@@ -1,5 +1,9 @@
 <%= simple_form_for resource do |f| %>
   <%= f.input :name %>
-  <%= f.submit %>
-  <%= link_to 'Voltar', action: :index %>
+  <%= f.button :submit, data: {disable_with: t('views.wait')}, class: 'btn-block' %>
+
+  <p class="text-center">
+    <br>
+    <%= link_to 'Voltar', action: :index %>
+  </p>
 <% end %>

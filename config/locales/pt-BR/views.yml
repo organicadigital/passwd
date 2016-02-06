@@ -1,6 +1,36 @@
 pt-BR:
   views:
+    wait: Aguarde...
     add_button: 'Adicionar'
     edit_button: 'Editar'
     delete_button: 'Excluir'
     destroy_confirm: Você tem certeza que deseja apagar este item?
+    login_button: 'Entrar'
+    sign_up_button: 'Cadastre-se'
+    reset_password_button: Redefinir minha senha
+    resend_confirmation_button: Reenviar instruções de confirmação
+    change_password_button: 'Alterar senha'
+
+  devise:
+    sessions:
+      new:
+        log_in: Entrar
+    registrations:
+      new:
+        sign_up: Cadastre-se
+    passwords:
+      new:
+        reset_password: Redefinir minha senha
+      edit:
+        reset_password: Redefinir minha senha
+        new_password: Nova senha
+        confirm_new_password: 'Confirmação da Nova senha'
+    confirmations:
+      new:
+        resend_confirmation: Reenviar instruções de confirmação
+    shared:
+      links:
+        log_in: Entrar
+        sign_up: Cadastre-se
+        resend_confirmation: 'Reenviar instruções de confirmação'
+        reset_password: 'Esqueceu sua senha?'

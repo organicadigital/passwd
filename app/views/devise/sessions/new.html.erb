@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2 class="panel-title">
+          <%= t('.log_in') %>
+        </h2>
+      </div>
+
+      <div class="panel-body">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.input :email, required: false, autofocus: true %>
+          <%= f.input :password, required: false %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.button :submit, t('views.login_button'), class: 'btn-block' %>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
