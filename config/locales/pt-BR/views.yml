@@ -1,0 +1,6 @@
+pt-BR:
+  views:
+    add_button: 'Adicionar'
+    edit_button: 'Editar'
+    delete_button: 'Excluir'
+    destroy_confirm: Você tem certeza que deseja apagar este item?

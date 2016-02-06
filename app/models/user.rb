@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   validates :email, format: {with: /@#{ALLOWED_DOMAIN}\z/,
                              message: I18n.t('errors.messages.invalid_domain',
                                              domain: ALLOWED_DOMAIN)}
+
+
+  has_many :members, dependent: :destroy
+  has_many :wallets, through: :members
 end

@@ -1,0 +1,26 @@
+<h1><%= Wallet.model_name.human(count: @wallets.count) %></h1>
+
+<%= link_to t('views.add_button'), new_wallet_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= Wallet.human_attribute_name :name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wallets.each do |wallet| %>
+      <tr>
+        <td>
+          <%= wallet.name %>
+        </td>
+
+        <td>
+          <%= link_to t('views.edit_button'), edit_wallet_path(wallet) %>
+          <%= link_to t('views.delete_button'), wallet_path(wallet),
+                      method: :delete, data: {confirm: t('views.destroy_confirm')} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

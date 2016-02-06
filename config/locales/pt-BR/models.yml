@@ -1,7 +1,14 @@
 pt-BR:
   activerecord:
+    models:
+      wallet:
+        one: Carteira
+        other: Carteiras
+
     attributes:
       user:
         email: E-mail
         password: Senha
         password_confirmation: Confirmação da Senha
+      wallet:
+        name: Nome
