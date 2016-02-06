@@ -1,6 +1,6 @@
 Rails.application.config.action_mailer.tap do |action_mailer|
-  secrets = Rails.application.secrets
+  configs = Rails.application.secrets.action_mailer
 
-  action_mailer.default_url_options = secrets.default_url_options
-  action_mailer.smtp_settings = secrets.smtp_settings
+  action_mailer.default_url_options = configs[:default_url_options]
+  action_mailer.smtp_settings = configs[:smtp_settings]
 end
