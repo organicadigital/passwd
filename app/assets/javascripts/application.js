@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
 
 var ready = function() {
+  $("[data-toggle='popover']").popover();
+
   $("[data-component='secure-show']").on('click', 'a', function(e) {
     e.preventDefault();
 

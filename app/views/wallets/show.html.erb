@@ -35,6 +35,16 @@
                       <tr>
                         <td><%= s.name %></td>
                         <td width="200" class="text-center">
+                          <%= link_to t('views.show_button'),
+                                      '#', data: {
+                                            toggle: 'popover',
+                                            title: s.name,
+                                            trigger: 'focus',
+                                            placement: 'top',
+                                            content: s.note
+                                          } %>
+
+                          &nbsp;
                           <%= link_to t('views.edit_button'),
                                       edit_wallet_secure_note_path(@wallet, s) %>
                           &nbsp;
