@@ -127,6 +127,7 @@ pt-BR:
       odd: deve ser ímpar
       required: deve existir
       taken: já está em uso
+      already_member: já possui acesso
       too_long:
         one: 'é muito longo (máximo: 1 caracter)'
         other: 'é muito longo (máximo: %{count} caracteres)'

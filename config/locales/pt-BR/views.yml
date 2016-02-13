@@ -3,6 +3,7 @@ pt-BR:
     wait: Aguarde...
     add_button: 'Adicionar'
     add_secure_note_button: 'Adicionar Segredo'
+    add_member_button: 'Convidar Usuário'
     back_button: 'Voltar'
     edit_button: 'Editar'
     show_button: 'Visualizar'
@@ -14,6 +15,7 @@ pt-BR:
     reset_password_button: Redefinir minha senha
     resend_confirmation_button: Reenviar instruções de confirmação
     change_password_button: 'Alterar senha'
+    revoke_user_button: 'Remover acesso'
 
   wallets:
     show:

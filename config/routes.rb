@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   resources :wallets do
     resources :secure_notes, except: [:index, :show]
+
+    resources :members, only: [:new, :create, :destroy]
   end
 end

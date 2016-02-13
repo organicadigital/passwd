@@ -7,6 +7,9 @@ pt-BR:
       secure_note:
         one: Segredo
         other: Segredos
+      member:
+        one: Usuário
+        other: Usuários
 
     attributes:
       user:

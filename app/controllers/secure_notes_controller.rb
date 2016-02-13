@@ -34,7 +34,7 @@ class SecureNotesController < ApplicationController
   protected
 
   def find_wallet
-    @wallet ||= Wallet.find(params[:wallet_id])
+    @wallet ||= current_user.wallets.find(params[:wallet_id])
   end
 
   def build_resource
