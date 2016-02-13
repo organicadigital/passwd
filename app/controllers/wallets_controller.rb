@@ -11,7 +11,7 @@ class WalletsController < ApplicationController
 
   def create
     if @wallet.save
-      current_user.wallets << @wallet
+      current_user.owner_wallets << @wallet
       redirect_to collection_path
     else
       render :new

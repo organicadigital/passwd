@@ -27,7 +27,7 @@ class MembersController < ApplicationController
   end
 
   def permitted_params
-    permitted = params.fetch(:invite, {}).permit(:email)
+    permitted = params.fetch(:invite, {}).permit(:email, :role)
 
     permitted.merge(wallet: @wallet, current_user: current_user)
   end

@@ -1,1 +1,3 @@
 <%= form.input :email %>
+<%= form.input :role,
+               collection: Member.transferable_roles(current_user.role_for(@wallet)) %>

@@ -14,6 +14,12 @@
               <%= member.user.email %>
             </td>
 
+            <td>
+              <span class="label label-primary">
+                <%= t(member.role, scope: 'activerecord.attributes.member.roles') %>
+              </span>
+            </td>
+
             <td width="200" class="text-center">
               <% if member.user != current_user %>
                 <%= link_to t('views.revoke_user_button'),
@@ -30,7 +36,7 @@
       </tbody>
       <tfoot>
         <tr>
-          <td></td>
+          <td colspan="2"></td>
           <td width="200" class="text-center">
             <%= link_to t('views.add_member_button'),
                         new_wallet_member_path(resource) %>

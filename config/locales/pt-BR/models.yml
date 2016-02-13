@@ -22,3 +22,8 @@ pt-BR:
       secure_note:
         name: Nome
         note: Informação Segura
+      member:
+        roles:
+          owner: 'Proprietário'
+          admin: 'Admin'
+          reader: 'Leitura'
