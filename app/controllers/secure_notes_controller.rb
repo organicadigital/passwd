@@ -2,6 +2,7 @@ class SecureNotesController < ApplicationController
   before_action :find_wallet
   before_action :build_resource, only: [:new, :create]
   before_action :find_resource, only: [:edit, :update, :destroy]
+  before_action :authorize_user
 
   def new
   end
@@ -32,6 +33,10 @@ class SecureNotesController < ApplicationController
   end
 
   protected
+
+  def authorize_user
+    authorizee @wallet, :manage_secure_notes?
+  end
 
   def find_wallet
     @wallet ||= current_user.wallets.find(params[:wallet_id])

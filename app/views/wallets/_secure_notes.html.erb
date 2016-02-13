@@ -5,14 +5,16 @@
   <div class="col-sm-11">
     <h4><%= SecureNote.model_name.human(count: resource.secure_notes.count) %></h4>
     <table class="table table-striped table-hover">
-      <tfoot>
-        <tr>
-          <td></td>
-          <td width="200" class="text-center">
-            <%= link_to t('views.add_secure_note_button'), new_wallet_secure_note_path(resource) %>
-          </td>
-        </tr>
-      </tfoot>
+      <% if policy(resource).manage_secure_notes? %>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td width="200" class="text-center">
+              <%= link_to t('views.add_secure_note_button'), new_wallet_secure_note_path(resource) %>
+            </td>
+          </tr>
+        </tfoot>
+      <% end %>
       <tbody>
         <% if resource.secure_notes.any? %>
           <% resource.secure_notes.each do |s| %>
@@ -27,17 +29,18 @@
                                   placement: 'top',
                                   content: s.note
                                 } %>
+                <% if policy(resource).manage_secure_notes? %>
+                  &nbsp;
+                  <%= link_to t('views.edit_button'),
+                              edit_wallet_secure_note_path(resource, s) %>
+                  &nbsp;
 
-                &nbsp;
-                <%= link_to t('views.edit_button'),
-                            edit_wallet_secure_note_path(resource, s) %>
-                &nbsp;
-
-                <%= link_to t('views.delete_button'),
-                            wallet_secure_note_path(resource, s),
-                            class: 'text-danger',
-                            data: {method: :delete,
-                                   confirm: t('views.destroy_confirm')} %>
+                  <%= link_to t('views.delete_button'),
+                              wallet_secure_note_path(resource, s),
+                              class: 'text-danger',
+                              data: {method: :delete,
+                                     confirm: t('views.destroy_confirm')} %>
+                <% end %>
 
               </td>
             </tr>

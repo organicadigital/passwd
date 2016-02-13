@@ -2,6 +2,7 @@ class MembersController < ApplicationController
   before_action :find_wallet
   before_action :build_resource
   before_action :find_resource, only: [:destroy]
+  before_action :authorize_invite, only: [:new, :create]
 
   def new
   end
@@ -15,12 +16,18 @@ class MembersController < ApplicationController
   end
 
   def destroy
-    @member.user != current_user && @member.destroy
+    authorize @member, :destroy?
+
+    @member.destroy
 
     redirect_to wallet_path(@wallet)
   end
 
   protected
+
+  def authorize_invite
+    authorize @wallet, :invite?
+  end
 
   def find_resource
     @member ||= @wallet.members.find(params[:id])

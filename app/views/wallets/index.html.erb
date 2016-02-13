@@ -33,12 +33,14 @@
 
                 <td class="text-center" width="200">
                   <%= link_to t('views.show_button'), wallet_path(wallet) %>
-                  &nbsp;
-                  <%= link_to t('views.edit_button'), edit_wallet_path(wallet) %>
-                  &nbsp;
-                  <%= link_to t('views.delete_button'), wallet_path(wallet),
-                              method: :delete, data: {confirm: t('views.destroy_confirm')},
-                              class: 'text-danger' %>
+                  <% if policy(wallet).manage? %>
+                    &nbsp;
+                    <%= link_to t('views.edit_button'), edit_wallet_path(wallet) %>
+                    &nbsp;
+                    <%= link_to t('views.delete_button'), wallet_path(wallet),
+                                method: :delete, data: {confirm: t('views.destroy_confirm')},
+                                class: 'text-danger' %>
+                  <% end %>
                 </td>
               </tr>
             <% end %>

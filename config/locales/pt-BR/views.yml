@@ -18,7 +18,7 @@ pt-BR:
     revoke_user_button: 'Remover acesso'
 
   wallets:
-    show:
+    secure_notes:
         empty_secure_notes: Nenhum segredo cadastrado.
 
   devise:

@@ -1,6 +1,7 @@
 class WalletsController < ApplicationController
   before_action :build_resource, only: [:new, :create]
   before_action :find_resource, only: [:edit, :update, :destroy, :show]
+  before_action :authorize_user, only: [:edit, :update, :destroy]
 
   def index
     @wallets = default_scope.ordered
@@ -39,6 +40,10 @@ class WalletsController < ApplicationController
   end
 
   protected
+
+  def authorize_user
+    authorize @wallet, :manage?
+  end
 
   def default_scope
     current_user.wallets

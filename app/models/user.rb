@@ -24,8 +24,12 @@ class User < ActiveRecord::Base
     @avatar ||= sprintf(GRAVATAR, hash: email_hash, size: size)
   end
 
+  def member_for(wallet)
+    @member_for ||= {}
+    @member_for[wallet] ||= members.where(wallet_id: wallet).first
+  end
+
   def role_for(wallet)
-    @roles_for ||= {}
-    @roles_for[wallet] ||= members.where(wallet_id: wallet).first.try(:role)
+    member_for(wallet).try(:role)
   end
 end

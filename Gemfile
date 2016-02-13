@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.5.6'
 gem 'devise_invitable', '~> 1.5.5'
 
+# Authorization
+gem 'pundit', '~> 1.1.0'
+
 # Forms simple!
 gem 'simple_form', '~> 3.2.1'
 
