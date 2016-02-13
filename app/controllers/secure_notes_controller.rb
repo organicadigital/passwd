@@ -35,7 +35,7 @@ class SecureNotesController < ApplicationController
   protected
 
   def authorize_user
-    authorizee @wallet, :manage_secure_notes?
+    authorize @wallet, :manage_secure_notes?
   end
 
   def find_wallet
