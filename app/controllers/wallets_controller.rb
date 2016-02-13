@@ -1,6 +1,6 @@
 class WalletsController < ApplicationController
   before_action :build_resource, only: [:new, :create]
-  before_action :find_resource, only: [:edit, :update, :destroy]
+  before_action :find_resource, only: [:edit, :update, :destroy, :show]
 
   def index
     @wallets = default_scope.ordered
@@ -27,6 +27,9 @@ class WalletsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
   end
 
   def destroy
@@ -56,4 +59,14 @@ class WalletsController < ApplicationController
   def permitted_params
     params.fetch(:wallet, {}).permit(:name)
   end
+
+  def resource_class
+    Wallet
+  end
+
+  def resource
+    build_resource
+  end
+
+  helper_method :resource_class, :resource
 end

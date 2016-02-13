@@ -5,4 +5,5 @@ class Wallet < ActiveRecord::Base
 
   has_many :members, dependent: :destroy
   has_many :users, through: :members
+  has_many :secure_notes, dependent: :destroy
 end

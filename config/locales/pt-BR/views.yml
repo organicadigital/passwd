@@ -2,7 +2,10 @@ pt-BR:
   views:
     wait: Aguarde...
     add_button: 'Adicionar'
+    add_secure_note_button: 'Adicionar Segredo'
+    back_button: 'Voltar'
     edit_button: 'Editar'
+    show_button: 'Visualizar'
     delete_button: 'Excluir'
     destroy_confirm: Você tem certeza que deseja apagar este item?
     login_button: 'Entrar'
@@ -10,6 +13,10 @@ pt-BR:
     reset_password_button: Redefinir minha senha
     resend_confirmation_button: Reenviar instruções de confirmação
     change_password_button: 'Alterar senha'
+
+  wallets:
+    show:
+        empty_secure_notes: Nenhum segredo cadastrado.
 
   devise:
     sessions:

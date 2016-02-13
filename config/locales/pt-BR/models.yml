@@ -4,6 +4,9 @@ pt-BR:
       wallet:
         one: Carteira
         other: Carteiras
+      secure_note:
+        one: Segredo
+        other: Segredos
 
     attributes:
       user:
@@ -13,3 +16,6 @@ pt-BR:
         remember_me: Lembrar Senha
       wallet:
         name: Nome
+      secure_note:
+        name: Nome
+        note: Informação

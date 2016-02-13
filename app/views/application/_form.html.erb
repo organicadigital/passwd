@@ -1,0 +1,9 @@
+<%= simple_form_for resource, url: {action: (resource.persisted? ? :update : :create)} do |f| %>
+  <%= render 'inputs', form: f %>
+  <%= f.button :submit, data: {disable_with: t('views.wait')},
+                        class: 'btn-block' %>
+  <p class="text-center">
+    <br>
+    <%= render 'back' %>
+  </p>
+<% end %>

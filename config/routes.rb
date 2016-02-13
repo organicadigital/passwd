@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'wallets#index'
 
-  resources :wallets
+  resources :wallets do
+    resources :secure_notes, except: [:index]
+  end
 end

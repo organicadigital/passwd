@@ -3,11 +3,11 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h2 class="panel-title">
-          <%= t('views.edit_button') %> <%= Wallet.model_name.human %>
+          <%= t('views.add_button') %> <%= resource_class.model_name.human %>
         </h2>
       </div>
       <div class="panel-body">
-        <%= render 'form', resource: @wallet %>
+        <%= render 'form' %>
       </div>
     </div>
   </div>
