@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160213113334) do
+ActiveRecord::Schema.define(version: 20160213125227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,13 @@ ActiveRecord::Schema.define(version: 20160213113334) do
   add_index "members", ["wallet_id", "user_id"], name: "index_members_on_wallet_id_and_user_id", unique: true, using: :btree
 
   create_table "secure_notes", force: :cascade do |t|
-    t.integer  "wallet_id",  null: false
-    t.string   "name",       null: false
-    t.text     "note",       null: false
+    t.integer  "wallet_id",           null: false
+    t.string   "name",                null: false
+    t.text     "encrypted_note",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "encrypted_note_salt"
+    t.text     "encrypted_note_iv"
   end
 
   create_table "users", force: :cascade do |t|

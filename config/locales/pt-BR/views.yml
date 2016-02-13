@@ -6,6 +6,7 @@ pt-BR:
     back_button: 'Voltar'
     edit_button: 'Editar'
     show_button: 'Visualizar'
+    click_to_edit_button: 'Clique para editar'
     delete_button: 'Excluir'
     destroy_confirm: Você tem certeza que deseja apagar este item?
     login_button: 'Entrar'

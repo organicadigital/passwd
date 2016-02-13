@@ -14,3 +14,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var ready = function() {
+  $("[data-component='secure-show']").on('click', 'a', function(e) {
+    e.preventDefault();
+
+    var $this = $(this);
+    var target = $($this.data('target'));
+
+    target.removeClass('hide');
+
+    $this.parent().remove();
+  });
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

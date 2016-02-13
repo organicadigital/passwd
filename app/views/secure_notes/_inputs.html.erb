@@ -1,2 +1,17 @@
 <%= form.input :name %>
-<%= form.input :note %>
+
+<%= form.label :note %>
+<br>
+
+<% if form.object.persisted? %>
+  <div class="click_to_show" data-component="secure-show">
+    <%= link_to t('views.click_to_edit_button'), '#',
+                class: 'btn btn-sm btn-default', data:{target: '.input_note'} %>
+  </div>
+<% end %>
+
+<div class="input_note <%= 'hide' if form.object.persisted? %>">
+  <%= form.input :note, as: :text, label: false %>
+</div>
+
+<br>
